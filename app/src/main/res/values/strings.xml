@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">JRTrade</string>
+    <string name="image_view">Image View</string>
+    <string name="image_icon">Image Icon</string>
+    <string name="slogan_capital">YOUR FUTURE,\n YOUR CRYPTOCURRENCY.</string>
+    <string name="slogan">Your Future,\n Your Cryptocurrency.</string>
+    <string name="introduction">Learn more about Cryptocurrencies, look to the future</string>
+
+    <string name="login_capital">LOG IN</string>
+    <string name="login">Log in</string>
+    <string name="signup_capital">SIGN UP</string>
+    <string name="signup">Sign up</string>
+    <string name="first_name">First name</string>
+    <string name="first_name_enter_hint">Enter your first name</string>
+    <string name="given_name">Given name</string>
+    <string name="given_name_enter_hint">Enter your given name</string>
+    <string name="username">Username</string>
+    <string name="username_enter_hint">Enter your username</string>
+    <string name="email">Email</string>
+    <string name="email_enter_hint">Enter your email</string>
+    <string name="password">Password</string>
+    <string name="password_enter_hint">Enter your password</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="signup_recommendation">Do not have an account?\n Register now!</string>
+    <string name="login_recommendation">Already have an account?\n Login here!</string>
+    <string name="choose_reset_pwd_way">Choose your preferred way to reset password:</string>
+    <string name="reset_pwd_email_option">Send a code via email</string>
+    <string name="reset_pwd_phone_number_option">Send a code via SMS</string>
+    <string name="confirm">Confirm</string>
+    <string name="enter_request">Enter your %1$s here:</string>
+</resources>
