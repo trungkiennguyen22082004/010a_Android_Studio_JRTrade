@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity()
                 // If login successfully
                 if (task.isSuccessful)
                 {
-                    Log.d(TAG, "signInWithEmail:success")
+                    Log.d(TAG, "loginWithEmail:success")
                     Toast.makeText(this, "Login successfully.", Toast.LENGTH_SHORT).show()
 
                     startActivity(Intent(applicationContext, MainActivity::class.java))
@@ -69,7 +69,7 @@ class LoginActivity : AppCompatActivity()
                 // If login failed
                 else
                 {
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
+                    Log.w(TAG, "loginWithEmail:failure", task.exception)
                     Toast.makeText(this, task.exception?.localizedMessage, Toast.LENGTH_SHORT).show()
                 }
             }

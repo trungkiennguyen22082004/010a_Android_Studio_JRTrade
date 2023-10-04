@@ -16,5 +16,6 @@
 
     <style name="edit_text_theme_2" parent="edit_text_theme_1">
         <item name="android:background">@drawable/custom_edit_text_background_2</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 </resources>

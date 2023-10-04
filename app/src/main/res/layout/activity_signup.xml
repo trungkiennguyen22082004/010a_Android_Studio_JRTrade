@@ -96,7 +96,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="15dp"
-                        android:text="@string/given_name"
+                        android:text="@string/last_name"
                         android:textColor="@color/pink_white"
                         android:textSize="24sp"
                         android:textStyle="italic" />
@@ -105,7 +105,7 @@
                         android:id="@+id/given_name_edit_text"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:hint="@string/given_name_enter_hint"
+                        android:hint="@string/last_name_enter_hint"
                         android:inputType="textPersonName"
                         android:autofillHints="@string/app_name"
                         style="@style/edit_text_theme_1"
