@@ -2,20 +2,35 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="transparent">#00000000</color>
     <color name="orange">#FFA200</color>
+    <color name="yellow_orange">#FFBF00</color>
+    <color name="white_white_white_gray">#F4F4F4</color>
+    <color name="white_white_gray">#E1E1E1</color>
     <color name="white_gray">#AFAFAF</color>
     <color name="yellow">#FFFF00</color>
+    <color name="yellow_lime">#95FF00</color>
     <color name="violet">#41336E</color>
-    <color name="dark_violet_blue">#FF130041</color>
+    <color name="dark_dark_violet_blue">#FF130041</color>
+    <color name="dark_violet_blue">#2E0D7E</color>
+    <color name="violet_purple">#6300B1</color>
     <color name="pink_white">#F5B8FF</color>
+    <color name="pink_white_white">#F9D3FF</color>
     <color name="violet_white">#B3B3FF</color>
-    <color name="purple_pink">#E03FD8</color>
+    <color name="violet_blue_white">#5E5EBC</color>
+    <color name="violet_blue_white_white">#A0A0D3</color>
+    <color name="purple_pink">#DA80DD</color>
     <color name="violet_blue">#664CF8</color>
     <color name="lime">#32CD59</color>
     <color name="lime_cyan">#00FF90</color>
     <color name="dark_cyan">#056363</color>
     <color name="half_dark_cyan">#0DC3C3</color>
-    <color name="cyan">#2EFFFF</color>
+    <color name="cyan">#2AD5D5</color>
+    <color name="light_cyan">#21FBFB</color>
     <color name="white_cyan">#A7FFFF</color>
+    <color name="white_white_cyan">#CCFFFF</color>
+    <color name="purple_white">#DFC0EA</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
+    <color name="dark_green">#16CA16</color>
 </resources>

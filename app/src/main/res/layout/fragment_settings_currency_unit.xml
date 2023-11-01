@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SettingsCurrencyUnitFragment">
+
+    <TextView
+        android:id="@+id/choose_currency_unit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:paddingBottom="10dp"
+        android:text="@string/choose_currency_unit_instruction"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+
+    <RadioGroup
+        android:id="@+id/choose_currency_unit_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="40dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_currency_unit">
+
+        <RadioButton
+            android:id="@+id/usd_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:minHeight="48dp"
+            android:buttonTint="@color/white"
+            android:text="@string/usd"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            tools:ignore="TextContrastCheck" />
+
+        <RadioButton
+            android:id="@+id/eur_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:minHeight="48dp"
+            android:buttonTint="@color/white"
+            android:text="@string/eur"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            tools:ignore="TextContrastCheck" />
+
+        <RadioButton
+            android:id="@+id/aud_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:minHeight="48dp"
+            android:buttonTint="@color/white"
+            android:text="@string/aud"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            tools:ignore="TextContrastCheck" />
+
+        <RadioButton
+            android:id="@+id/vnd_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:minHeight="48dp"
+            android:buttonTint="@color/white"
+            android:text="@string/vnd"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="italic"
+            tools:ignore="TextContrastCheck" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/save"
+        android:textColor="@color/yellow"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/custom_rectangle_background_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/choose_currency_unit_group"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

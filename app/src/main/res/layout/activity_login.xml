@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_color_1"
-    tools:context=".LoginActivity" >
+    tools:context=".activities.LoginActivity" >
 
     <TextView
         android:id="@+id/login_title"
@@ -105,13 +105,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_section" />
-    
+
     <Button
         android:id="@+id/login_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/custom_rectangle_button_1"
+        android:background="@drawable/custom_rectangle_background_1"
         android:text="@string/login"
         android:textSize="24sp"
         android:textStyle="bold"

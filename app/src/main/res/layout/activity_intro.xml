@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_color_1"
-    tools:context=".IntroActivity" >
+    tools:context=".activities.IntroActivity" >
 
     <ImageView
         android:id="@+id/logo"
@@ -55,8 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:contentDescription="@string/image_icon"
-        android:background="@drawable/circle_button"
-        android:src="@drawable/baseline_navigate_next_96"
+        android:background="@drawable/circle_drawable_1"
+        android:src="@drawable/ic_navigate_next"
         app:layout_constraintWidth_percent="0.8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

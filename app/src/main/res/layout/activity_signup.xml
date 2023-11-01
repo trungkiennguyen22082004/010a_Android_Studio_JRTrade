@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_color_1"
-    tools:context=".SignupActivity">
+    tools:context=".activities.SignupActivity">
 
     <TextView
         android:id="@+id/signup_title"
@@ -184,7 +184,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/custom_rectangle_button_1"
+        android:background="@drawable/custom_rectangle_background_1"
         android:text="@string/signup"
         android:textSize="24sp"
         android:textStyle="bold"
