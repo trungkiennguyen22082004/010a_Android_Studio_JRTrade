@@ -117,18 +117,25 @@ class LoginActivity : AppCompatActivity()
     {
         val userID: String = _auth.currentUser?.uid ?: ""
 
-        val userDocumentReference: DocumentReference = _firestore.collection("users").document(userID)
-        userDocumentReference.get().addOnSuccessListener()
-        { document ->
-            Constants.userID = userID
-            Constants.firstName = document.getString("firstName") ?: ""
-            Constants.lastName = document.getString("lastName") ?: ""
-            Constants.email = document.getString("email") ?: ""
-            Constants.avatarID = (document.getLong("avatarID") ?: 0).toInt()
-            Constants.balanceInUSD = (document.getDouble("balance") ?: 0).toDouble()
+        try
+        {
+            val userDocumentReference: DocumentReference = _firestore.collection("users").document(userID)
+            userDocumentReference.get().addOnSuccessListener()
+            { document ->
+                Constants.userID = userID
+                Constants.firstName = document.getString("firstName") ?: ""
+                Constants.lastName = document.getString("lastName") ?: ""
+                Constants.email = document.getString("email") ?: ""
+                Constants.avatarID = (document.getLong("avatarID") ?: 0).toInt()
+                Constants.balanceInUSD = (document.getDouble("balance") ?: 0).toDouble()
 
-            startActivity(Intent(applicationContext, HomeActivity::class.java))
-            finish()
+                startActivity(Intent(applicationContext, HomeActivity::class.java))
+                finish()
+            }
+        }
+        catch (e: Exception)
+        {
+            Log.e("Firestore connecting error", e.toString())
         }
     }
 

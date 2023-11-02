@@ -83,31 +83,38 @@ class ProfileActivity : AppCompatActivity()
         currencyUnitTextView.text = getString(R.string.balance_in_currency_unit, Constants.currency.name)
         balanceValueTextView.text = getString(R.string.balance_value, Constants.formatPrice(Constants.balanceInUSD))
 
-        val transactionsCollectionReference: CollectionReference = _firestore.collection("transactions")
-        transactionsCollectionReference.get().addOnSuccessListener()
-        {documents ->
-            for (document in documents)
-            {
-                if (document.getString("userID") == Constants.userID)
+        try
+        {
+            val transactionsCollectionReference: CollectionReference = _firestore.collection("transactions")
+            transactionsCollectionReference.get().addOnSuccessListener()
+            {documents ->
+                for (document in documents)
                 {
-                    _transactions.add(
-                        Transaction(coinName = document.getString("coinName") ?: "",
-                                                 dateTime = document.getTimestamp("dateTime")?.toDate() ?: Date(),
-                                                 tradingType = TradingType.valueOf(document.getString("tradingType") ?: ""),
-                                                 amountInDollars = (document.getDouble("amountInDollars") ?: 0.00).toFloat(),
-                                                 status = TransactionStatus.valueOf(document.getString("status") ?: ""))
-                    )
+                    if (document.getString("userID") == Constants.userID)
+                    {
+                        _transactions.add(
+                            Transaction(coinName = document.getString("coinName") ?: "",
+                                                     dateTime = document.getTimestamp("dateTime")?.toDate() ?: Date(),
+                                                     tradingType = TradingType.valueOf(document.getString("tradingType") ?: ""),
+                                                     amountInDollars = (document.getDouble("amountInDollars") ?: 0.00).toFloat(),
+                                                     status = TransactionStatus.valueOf(document.getString("status") ?: ""))
+                        )
 
-                    Log.d("Document", "Loaded document: ${_transactions[_transactions.size - 1]}")
+                        Log.d("Document", "Loaded document: ${_transactions[_transactions.size - 1]}")
+                    }
+
+                    // Sort the transactions by dateTime in descending order
+                    _transactions.sortByDescending { it.dateTime }
+
+                    // Set up RecyclerView adapter after sorting
+                    transactionsRecyclerView.layoutManager = LinearLayoutManager(this)
+                    transactionsRecyclerView.adapter = TransactionAdapter(applicationContext, _transactions)
                 }
-
-                // Sort the transactions by dateTime in descending order
-                _transactions.sortByDescending { it.dateTime }
-
-                // Set up RecyclerView adapter after sorting
-                transactionsRecyclerView.layoutManager = LinearLayoutManager(this)
-                transactionsRecyclerView.adapter = TransactionAdapter(applicationContext, _transactions)
             }
+        }
+        catch (e: Exception)
+        {
+            Log.e("Firestore connecting error", e.toString())
         }
     }
 }

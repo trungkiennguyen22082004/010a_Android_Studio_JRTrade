@@ -70,11 +70,11 @@ class TradingActivity : AppCompatActivity()
                 {
                     if (s.toString() != "")
                     {
-                        payGetButton.text = getString(R.string.pay_amount, s.toString().toDouble() * coinPrice)
+                        payGetButton.text = getString(R.string.pay_amount, Constants.formatPrice(s.toString().toDouble() * coinPrice))
                     }
                     else
                     {
-                        payGetButton.text = getString(R.string.pay_amount, 0.0)
+                        payGetButton.text = getString(R.string.pay_amount, Constants.formatPrice(0.0))
                     }
                 }
             })
@@ -165,11 +165,11 @@ class TradingActivity : AppCompatActivity()
                 {
                     if (s.toString() != "")
                     {
-                        payGetButton.text = getString(R.string.get_amount, (s.toString()).toDouble() * coinPrice)
+                        payGetButton.text = getString(R.string.get_amount, Constants.formatPrice((s.toString()).toDouble() * coinPrice))
                     }
                     else
                     {
-                        payGetButton.text = getString(R.string.get_amount, 0.0)
+                        payGetButton.text = getString(R.string.get_amount, Constants.formatPrice(0.0))
                     }
                 }
             })
@@ -215,7 +215,7 @@ class TradingActivity : AppCompatActivity()
                 }
                 else
                 {
-                    amountWarningTextView.text = getString(R.string.insufficient_balance)
+                    amountWarningTextView.text = getString(R.string.insufficient_coin_balance, coinCode)
                     amountWarningTextView.visibility = View.VISIBLE
                 }
             }

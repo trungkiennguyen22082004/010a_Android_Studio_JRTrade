@@ -91,8 +91,8 @@
     <string name="selling_capital">SELLING %1$s</string>
     <string name="amount">Amount in %1$s</string>
     <string name="amount_enter_hint">Enter your preferred amount</string>
-    <string name="pay_amount">Pay %.2f</string>
-    <string name="get_amount">Get %.2f</string>
+    <string name="pay_amount">Pay %1$s</string>
+    <string name="get_amount">Get %1$s</string>
     <string name="pay">Pay</string>
     <string name="get">Get</string>
     <string name="user_crypto_wallets">%1$s\'s \n  CRYPTOs WALLET</string>

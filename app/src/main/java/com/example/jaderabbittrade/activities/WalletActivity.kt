@@ -66,37 +66,44 @@ class WalletActivity : AppCompatActivity()
 
         val cryptosWalletRecyclerView: RecyclerView = findViewById(R.id.wallet_cryptos)
 
-        val userID: String = _auth.currentUser?.uid ?: ""
-        val cryptosWalletDocumentReference = _firestore.collection("usersCryptoBalance").document(userID)
-        cryptosWalletDocumentReference.get().addOnSuccessListener()
-        { documentSnapshot ->
-            if (documentSnapshot.exists())
-            {
-                Log.d("Retrieving Cryptos Wallet", documentSnapshot.data.toString())
-
-                val dataMap = documentSnapshot.data as Map<String, Any>
-
-                val cryptoBalanceList = mutableListOf<CryptoBalance>()
-
-                for ((coinCode, amount) in dataMap)
+        try
+        {
+            val userID: String = _auth.currentUser?.uid ?: ""
+            val cryptosWalletDocumentReference = _firestore.collection("usersCryptoBalance").document(userID)
+            cryptosWalletDocumentReference.get().addOnSuccessListener()
+            { documentSnapshot ->
+                if (documentSnapshot.exists())
                 {
-                    val cryptoBalance = CryptoBalance(coinCode, amount as Double)
-                    cryptoBalanceList.add(cryptoBalance)
-                }
+                    Log.d("Retrieving Cryptos Wallet", documentSnapshot.data.toString())
 
-                cryptosWalletRecyclerView.layoutManager = LinearLayoutManager(this)
-                val cryptosWalletAdapter = CryptosWalletAdapter(applicationContext, cryptoBalanceList)
-                cryptosWalletAdapter.onItemClickListener = {
-                    val intent = Intent(this, TradingActivity::class.java)
-                    intent.putExtra("Trading type", "Sell")
-                    intent.putExtra("Coin code", it.coinCode)
-                    intent.putExtra("Coin amount", it.amount)
+                    val dataMap = documentSnapshot.data as Map<String, Any>
 
-                    startActivity(intent)
-                    finish()
+                    val cryptoBalanceList = mutableListOf<CryptoBalance>()
+
+                    for ((coinCode, amount) in dataMap)
+                    {
+                        val cryptoBalance = CryptoBalance(coinCode, amount as Double)
+                        cryptoBalanceList.add(cryptoBalance)
+                    }
+
+                    cryptosWalletRecyclerView.layoutManager = LinearLayoutManager(this)
+                    val cryptosWalletAdapter = CryptosWalletAdapter(applicationContext, cryptoBalanceList)
+                    cryptosWalletAdapter.onItemClickListener = {
+                        val intent = Intent(this, TradingActivity::class.java)
+                        intent.putExtra("Trading type", "Sell")
+                        intent.putExtra("Coin code", it.coinCode)
+                        intent.putExtra("Coin amount", it.amount)
+
+                        startActivity(intent)
+                        finish()
+                    }
+                    cryptosWalletRecyclerView.adapter = cryptosWalletAdapter
                 }
-                cryptosWalletRecyclerView.adapter = cryptosWalletAdapter
             }
+        }
+        catch (e: Exception)
+        {
+            Log.e("Firestore connecting error", e.toString())
         }
     }
 }
