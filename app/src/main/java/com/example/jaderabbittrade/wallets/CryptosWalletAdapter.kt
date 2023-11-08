@@ -25,7 +25,7 @@ class CryptosWalletAdapter(context: Context, cryptosWallet: MutableList<CryptoBa
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CryptosWalletAdapter.CryptoBalanceViewHolder
     {
-        return CryptoBalanceViewHolder(LayoutInflater.from(_context).inflate(R.layout.crypto_balance_view, parent, false))
+        return CryptoBalanceViewHolder(LayoutInflater.from(_context).inflate(R.layout.view_crypto_balance, parent, false))
     }
 
     override fun onBindViewHolder(holder: CryptosWalletAdapter.CryptoBalanceViewHolder, position: Int)

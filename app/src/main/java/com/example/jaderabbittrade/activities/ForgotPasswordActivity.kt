@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.jaderabbittrade.R
@@ -44,5 +45,23 @@ class ForgotPasswordActivity : AppCompatActivity()
                 }
             }
         }
+
+        // Return to Login Activity
+        val returnButton: ImageButton = findViewById(R.id.return_btn)
+        returnButton.setOnClickListener()
+        {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+    }
+
+    @Deprecated("Deprecated in Java")
+    @Suppress("DEPRECATION")
+    override fun onBackPressed()
+    {
+        super.onBackPressed()
+
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 }

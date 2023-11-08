@@ -1,5 +1,6 @@
 package com.example.jaderabbittrade
 
+import android.content.Context
 import com.example.jaderabbittrade.crypto_api.CryptoCurrency
 
 object Constants

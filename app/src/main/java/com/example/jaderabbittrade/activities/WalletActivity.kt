@@ -41,6 +41,13 @@ class WalletActivity : AppCompatActivity()
             finish()
         }
 
+        val fBNewsButton: ImageButton = floatingBar.findViewById(R.id.news_button)
+        fBNewsButton.setOnClickListener()
+        {
+            startActivity(Intent(applicationContext, NewsActivity::class.java))
+            finish()
+        }
+
         val fBProfileButton: ImageButton = floatingBar.findViewById(R.id.profile_button)
         fBProfileButton.setOnClickListener()
         {

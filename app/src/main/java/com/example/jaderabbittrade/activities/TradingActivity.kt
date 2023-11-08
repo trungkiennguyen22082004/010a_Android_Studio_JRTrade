@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,8 @@ class TradingActivity : AppCompatActivity()
     private lateinit var _auth : FirebaseAuth
     private lateinit var _firestore: FirebaseFirestore
 
+    private var _tradingType: String = ""
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -35,6 +38,7 @@ class TradingActivity : AppCompatActivity()
         _firestore = FirebaseFirestore.getInstance()
 
         // Initialize the views
+        val returnButton: ImageButton = findViewById(R.id.return_btn)
         val tradingTitleTextView: TextView = findViewById(R.id.trading_title)
         val amountTextView: TextView = findViewById(R.id.amount_text_view)
         val payGetButton: Button = findViewById(R.id.submitting_button)
@@ -44,9 +48,10 @@ class TradingActivity : AppCompatActivity()
         amountWarningTextView.visibility = View.INVISIBLE
 
         val bundle: Bundle? = intent.extras
-        val tradingType = bundle?.getString("Trading type") ?: ""
+        _tradingType = bundle?.getString("Trading type") ?: ""
 
-        if (tradingType == "Buy")
+        // If the process is "Buy"
+        if (_tradingType == "Buy")
         {
             val coinName: String = bundle?.getString("Coin name") ?: ""
             val coinCode: String = bundle?.getString("Coin code") ?: ""
@@ -124,7 +129,15 @@ class TradingActivity : AppCompatActivity()
                     amountWarningTextView.visibility = View.VISIBLE
                 }
             }
+
+            // Return to Home Activity
+            returnButton.setOnClickListener()
+            {
+                startActivity(Intent(this, HomeActivity::class.java))
+                finish()
+            }
         }
+        // Else if the process is "Sell"
         else
         {
             val coinCode: String = bundle?.getString("Coin code") ?: ""
@@ -219,6 +232,32 @@ class TradingActivity : AppCompatActivity()
                     amountWarningTextView.visibility = View.VISIBLE
                 }
             }
+
+            // Return to Wallet Activity
+            returnButton.setOnClickListener()
+            {
+                startActivity(Intent(this, WalletActivity::class.java))
+                finish()
+            }
         }
+    }
+
+    @Deprecated("Deprecated in Java")
+    @Suppress("DEPRECATION")
+    override fun onBackPressed()
+    {
+        super.onBackPressed()
+
+        val newIntent = if (_tradingType == "Buy")
+        {
+            Intent(this, HomeActivity::class.java)
+        }
+        else
+        {
+            Intent(this, WalletActivity::class.java)
+        }
+
+        startActivity(newIntent)
+        finish()
     }
 }

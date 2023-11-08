@@ -55,6 +55,13 @@ class ProfileActivity : AppCompatActivity()
             finish()
         }
 
+        val fBNewsButton: ImageButton = floatingBar.findViewById(R.id.news_button)
+        fBNewsButton.setOnClickListener()
+        {
+            startActivity(Intent(applicationContext, NewsActivity::class.java))
+            finish()
+        }
+
         val fBProfileButton: ImageButton = floatingBar.findViewById(R.id.profile_button)
         fBProfileButton.isClickable = false
         fBProfileButton.setImageResource(R.drawable.ic_profile_purple_pink)
@@ -116,5 +123,23 @@ class ProfileActivity : AppCompatActivity()
         {
             Log.e("Firestore connecting error", e.toString())
         }
+
+        // Deposit Functionality
+        val depositButton: ImageButton = findViewById(R.id.deposit_button)
+        depositButton.setOnClickListener()
+        {
+            startActivity(Intent(this, DepositActivity::class.java))
+            finish()
+        }
+    }
+
+    @Deprecated("Deprecated in Java")
+    @Suppress("DEPRECATION")
+    override fun onBackPressed()
+    {
+        super.onBackPressed()
+
+        startActivity(Intent(this, HomeActivity::class.java))
+        finish()
     }
 }

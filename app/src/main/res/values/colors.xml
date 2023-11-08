@@ -8,6 +8,7 @@
     <color name="white_white_white_gray">#F4F4F4</color>
     <color name="white_white_gray">#E1E1E1</color>
     <color name="white_gray">#AFAFAF</color>
+    <color name="gray">#676767</color>
     <color name="yellow">#FFFF00</color>
     <color name="yellow_lime">#95FF00</color>
     <color name="violet">#41336E</color>
@@ -16,10 +17,12 @@
     <color name="violet_purple">#6300B1</color>
     <color name="pink_white">#F5B8FF</color>
     <color name="pink_white_white">#F9D3FF</color>
+    <color name="pink_white_white_white">#FADFFF</color>
     <color name="violet_white">#B3B3FF</color>
     <color name="violet_blue_white">#5E5EBC</color>
     <color name="violet_blue_white_white">#A0A0D3</color>
     <color name="purple_pink">#DA80DD</color>
+    <color name="purple">#800080</color>
     <color name="violet_blue">#664CF8</color>
     <color name="lime">#32CD59</color>
     <color name="lime_cyan">#00FF90</color>

@@ -1,5 +1,6 @@
 package com.example.jaderabbittrade.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.jaderabbittrade.Constants
@@ -47,6 +49,14 @@ class SettingsCurrencyUnitFragment : Fragment()
             }
 
             Constants.currency = result
+
+            val sharedPreferences = requireContext().getSharedPreferences("SettingsSharedPrefs", Context.MODE_PRIVATE)
+            sharedPreferences.edit().apply()
+            {
+                putString("Currency Unit", result.name)
+            }.apply()
+
+            Toast.makeText(requireContext(), "Save ${result.name} as Preferred Currency Unit", Toast.LENGTH_SHORT).show()
 
             findNavController().navigate(R.id.action_settingsCurrencyUnitFragment_to_settingsFragment)
         }

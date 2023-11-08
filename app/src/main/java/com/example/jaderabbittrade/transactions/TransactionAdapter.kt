@@ -23,7 +23,7 @@ class TransactionAdapter(context: Context, transactions: MutableList<Transaction
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionViewHolder
     {
-        return TransactionViewHolder(LayoutInflater.from(_context).inflate(R.layout.transaction_view, parent, false))
+        return TransactionViewHolder(LayoutInflater.from(_context).inflate(R.layout.view_transaction, parent, false))
     }
 
     override fun onBindViewHolder(holder: TransactionViewHolder, position: Int)

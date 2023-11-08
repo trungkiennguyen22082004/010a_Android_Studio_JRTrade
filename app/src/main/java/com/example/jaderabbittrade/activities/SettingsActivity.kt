@@ -2,13 +2,12 @@ package com.example.jaderabbittrade.activities
 
 import android.content.ContentValues
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.jaderabbittrade.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -49,4 +48,15 @@ class SettingsActivity : AppCompatActivity()
             finish()
         }
     }
+
+    @Deprecated("Deprecated in Java")
+    @Suppress("DEPRECATION")
+    override fun onBackPressed()
+    {
+        super.onBackPressed()
+
+        startActivity(Intent(this, HomeActivity::class.java))
+        finish()
+    }
+
 }

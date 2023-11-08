@@ -1,5 +1,6 @@
 package com.example.jaderabbittrade.activities
 
+import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.os.Bundle
@@ -67,6 +68,13 @@ class HomeActivity : AppCompatActivity()
         fBHomeButton.isClickable = false
         fBHomeButton.foreground = ContextCompat.getDrawable(applicationContext, R.drawable.floating_home_background_2)
 
+        val fBNewsButton: ImageButton = floatingBar.findViewById(R.id.news_button)
+        fBNewsButton.setOnClickListener()
+        {
+            startActivity(Intent(applicationContext, NewsActivity::class.java))
+            finish()
+        }
+
         val fBProfileButton: ImageButton = floatingBar.findViewById(R.id.profile_button)
         fBProfileButton.setOnClickListener()
         {
@@ -91,6 +99,18 @@ class HomeActivity : AppCompatActivity()
         this.getExchangeRatesData()
 
         this.getTopCurrencyList()
+
+        // Set the Currency SharePrefs
+        val sharedPreferences = getSharedPreferences("SettingsSharedPrefs", Context.MODE_PRIVATE)
+        val currencySPString = sharedPreferences.getString("Currency Unit", "USD") ?: "USD"
+        try
+        {
+            Constants.currency = Constants.Currency.valueOf(currencySPString)
+        }
+        catch (e: IllegalArgumentException)
+        {
+            Log.e("Getting Currency Unit ShardPrefs", e.toString())
+        }
 
         // Sort functionality
         _hotButton = findViewById(R.id.hot_button)

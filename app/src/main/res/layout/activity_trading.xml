@@ -8,11 +8,24 @@
     android:background="@drawable/gradient_color_4"
     tools:context=".activities.LoginActivity" >
 
+    <ImageButton
+        android:id="@+id/return_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/transparent"
+        android:src="@drawable/ic_arrow_back_dark_green"
+        android:contentDescription="@string/return_content_desc"
+        tools:ignore="ImageContrastCheck"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
     <TextView
         android:id="@+id/trading_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:gravity="start"
         android:text="@string/buying_capital"
         android:textColor="@color/violet"
@@ -21,7 +34,7 @@
         app:layout_constraintWidth_percent="0.80"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/return_btn" />
 
     <LinearLayout
         android:id="@+id/amount_section"

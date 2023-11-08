@@ -30,7 +30,7 @@ class CryptoAdapter(context: Context, cryptoAssets: MutableList<CryptoCurrency>)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CryptoAdapter.CryptoViewHolder
     {
-        return CryptoViewHolder(LayoutInflater.from(_context).inflate(R.layout.crypto_asset_view, parent, false))
+        return CryptoViewHolder(LayoutInflater.from(_context).inflate(R.layout.view_crypto_asset, parent, false))
     }
 
     override fun onBindViewHolder(holder: CryptoAdapter.CryptoViewHolder, position: Int)
